@@ -26,7 +26,14 @@
             <td>{{product.description}}</td>
             <td>{{product.date_added}}</td>
             <td>
-                <a href="/delete/{{product.id}}"><button>hapus product {{product.id}}</button></a>
+                <a href="/delete/{{product.id}}"><button>Hapus Product Ini</button></a>
+            </td>
+            <td>
+                <a href="{% url 'main:delete' product.pk %}">
+                    <button>
+                        Edit
+                    </button>
+                </a>
             </td>
         </tr>
     {% endfor %}
