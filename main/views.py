@@ -107,3 +107,7 @@ def edit_product(request, id):
 
     context = {'form': form}
     return render(request, "edit_product.html", context)
+
+def calculate_total():
+    total_amount = Product.objects.all(Product.Sum('amount'))['amount__sum']
+    return total_amount if total_amount is not None else 0
