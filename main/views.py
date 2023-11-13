@@ -63,6 +63,7 @@ def delete(request, id):
     data = Product.objects.get(pk=id)
     data.delete()
     return HttpResponseRedirect(reverse('main:show_main'))
+    
 def register(request):
     form = UserCreationForm()
 
